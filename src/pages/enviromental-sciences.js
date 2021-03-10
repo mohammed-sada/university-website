@@ -4,14 +4,14 @@ import Subject from "../components/Subject"
 
 const ComponentName = ({ data }) => {
   const {
-    allContentfulRequirementsEngineering: { nodes: lectures },
+    allContentfulEnvironmentalScience: { nodes: lectures },
   } = data
   return <Subject lectures={lectures} name="علوم بيئة" />
 }
 
 export const query = graphql`
   {
-    allContentfulEnviromentalSciences(
+    allContentfulEnvironmentalScience(
       sort: { fields: lectureNumber, order: DESC }
     ) {
       nodes {

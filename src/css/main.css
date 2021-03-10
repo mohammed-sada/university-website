@@ -341,7 +341,7 @@ Navbar
   display: none;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1400px) {
   .toggle-btn {
     display: none;
   }
@@ -440,12 +440,12 @@ Sidebar
 .close-btn:hover {
   transform: scale(1.15);
 }
-
+/* 
 @media screen and (min-width: 992px) {
   .sidebar {
     transform: translateX(-100%);
   }
-}
+} */
 
 /*
 =============== 
