@@ -18,12 +18,12 @@ const Subject = ({ lectures, name }) => {
                   <h4>{lectureNumber}:رقم المحاضرة</h4>
                   <p className="desc">{(desc !== null && desc.desc) || ""}</p>
                   <div className="blog-footer">
-                    <p>
+                    {/* <p>
                       {" "}
                       {name === "requirements Engineering"
                         ? "requirements Eng."
                         : name}
-                    </p>
+                    </p> */}
                     <a
                       href={url}
                       target="_blank"

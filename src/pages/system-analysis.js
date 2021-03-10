@@ -1,11 +1,29 @@
 import React from "react"
+import { graphql } from "gatsby"
+import Subject from "../components/Subject"
 
-const systemAnalysis = () => {
-  return (
-    <div>
-      <h1>تحليل وتصميم الأنظمة</h1>
-    </div>
-  )
+const ComponentName = ({ data }) => {
+  const {
+    allContentfulSystemsAnalysis: { nodes: lectures },
+  } = data
+  return <Subject lectures={lectures} name="تحليل وتصميم الأنظمة" />
 }
 
-export default systemAnalysis
+export const query = graphql`
+  {
+    allContentfulSystemsAnalysis(sort: { fields: lectureNumber, order: DESC }) {
+      nodes {
+        id
+        lectureNumber
+        url
+        date(formatString: "dddd MM yyyy")
+        updatedAt(formatString: "dddd MM yyyy")
+        desc {
+          desc
+        }
+      }
+    }
+  }
+`
+
+export default ComponentName

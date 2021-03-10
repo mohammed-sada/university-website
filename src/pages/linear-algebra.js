@@ -1,11 +1,29 @@
 import React from "react"
+import { graphql } from "gatsby"
+import Subject from "../components/Subject"
 
-const linearAlgebra = () => {
-  return (
-    <div>
-      <h1>جبر خطي</h1>
-    </div>
-  )
+const ComponentName = ({ data }) => {
+  const {
+    allContentfulLinearAlgebra: { nodes: lectures },
+  } = data
+  return <Subject lectures={lectures} name="جبر خطي" />
 }
 
-export default linearAlgebra
+export const query = graphql`
+  {
+    allContentfulLinearAlgebra(sort: { fields: lectureNumber, order: DESC }) {
+      nodes {
+        id
+        lectureNumber
+        url
+        date(formatString: "dddd MM yyyy")
+        updatedAt(formatString: "dddd MM yyyy")
+        desc {
+          desc
+        }
+      }
+    }
+  }
+`
+
+export default ComponentName

@@ -1,11 +1,29 @@
 import React from "react"
+import { graphql } from "gatsby"
+import Subject from "../components/Subject"
 
-const quran2 = () => {
-  return (
-    <div>
-      <h1>قرآن 2</h1>
-    </div>
-  )
+const ComponentName = ({ data }) => {
+  const {
+    allContentfulQuran2: { nodes: lectures },
+  } = data
+  return <Subject lectures={lectures} name="قرآن 2" />
 }
 
-export default quran2
+export const query = graphql`
+  {
+    allContentfulQuran2(sort: { fields: lectureNumber, order: DESC }) {
+      nodes {
+        id
+        lectureNumber
+        url
+        date(formatString: "dddd MM yyyy")
+        updatedAt(formatString: "dddd MM yyyy")
+        desc {
+          desc
+        }
+      }
+    }
+  }
+`
+
+export default ComponentName

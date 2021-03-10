@@ -1,11 +1,32 @@
 import React from "react"
+import { graphql } from "gatsby"
+import Subject from "../components/Subject"
 
-const computerGraphics = () => {
-  return (
-    <div>
-      <h1>جرافيك حاسوب</h1>
-    </div>
-  )
+const ComponentName = ({ data }) => {
+  const {
+    allContentfulComputerGraphics: { nodes: lectures },
+  } = data
+  return <Subject lectures={lectures} name="جرافيك حاسوب" />
 }
 
-export default computerGraphics
+export const query = graphql`
+  {
+    allContentfulComputerGraphics(
+      sort: { fields: lectureNumber, order: DESC }
+    ) {
+      nodes {
+        id
+        lectureNumber
+        url
+        date(formatString: "dddd MM yyyy")
+        updatedAt(formatString: "dddd MM yyyy")
+
+        desc {
+          desc
+        }
+      }
+    }
+  }
+`
+
+export default ComponentName
