@@ -27,6 +27,11 @@ const data = [
     url: "/academic-writing/",
   },
   { id: 7, text: "عقيدة", url: "/عقيدة/" },
+  { id: 8, text: "علوم بيئة", url: "/enviromental-sciences/" },
+  { id: 9, text: "تحليل وتصميم الأنظمة", url: "/system-analysis/" },
+  { id: 10, text: "جرافيك حاسوب", url: "/computer-graphics/" },
+  { id: 11, text: "جبر خطي", url: "/linear-algebra/" },
+  { id: 12, text: "قرآن 2", url: "/quran2/" },
 ]
 
 const tempLinks = data.map(link => {
