@@ -16,8 +16,8 @@ export const query = graphql`
         id
         lectureNumber
         url
-        date(formatString: "dddd MM yyyy")
-        updatedAt(formatString: "dddd MM yyyy")
+        date(formatString: "dddd/MM/yyyy")
+        updatedAt(formatString: "dddd/MM/yyyy")
         desc {
           desc
         }

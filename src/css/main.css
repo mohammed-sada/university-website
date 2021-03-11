@@ -623,3 +623,7 @@ Footer
     width: 500px;
   }
 }
+
+.hideNew {
+  display: none !important;
+}

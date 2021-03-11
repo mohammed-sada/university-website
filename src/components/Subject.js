@@ -1,3 +1,4 @@
+import dayjs from "dayjs"
 import React from "react"
 import Layout from "./Layout"
 
@@ -11,6 +12,7 @@ const Subject = ({ lectures, name }) => {
       <div className="section-center blogs-center">
         {lectures.map(lecture => {
           const { id, lectureNumber, url, desc, date, updatedAt } = lecture
+
           return (
             <div key={id} className="blog">
               <article>
@@ -18,12 +20,14 @@ const Subject = ({ lectures, name }) => {
                   <h4>{lectureNumber}:رقم المحاضرة</h4>
                   <p className="desc">{(desc !== null && desc.desc) || ""}</p>
                   <div className="blog-footer">
-                    {/* <p>
-                      {" "}
-                      {name === "requirements Engineering"
-                        ? "requirements Eng."
-                        : name}
-                    </p> */}
+                    <p
+                      className={`${
+                        updatedAt !==
+                          dayjs(new Date()).format("dddd/MM/YYYY") && "hideNew"
+                      }`}
+                    >
+                      new
+                    </p>
                     <a
                       href={url}
                       target="_blank"
