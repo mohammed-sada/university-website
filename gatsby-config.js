@@ -33,6 +33,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-lucky-orange`,
+      options: {
+        id: process.env.SITE_ID,
+      },
+    },
+    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `dg1xotujxiw2`,
