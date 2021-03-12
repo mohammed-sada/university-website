@@ -11,7 +11,7 @@ const ComponentName = ({ data }) => {
 
 export const query = graphql`
   {
-    allContentfulAssembly(sort: { fields: lectureNumber, order: DESC }) {
+    allContentfulAssembly(sort: { fields: createdAt, order: DESC }) {
       nodes {
         id
         lectureNumber

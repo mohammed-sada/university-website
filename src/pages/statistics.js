@@ -11,13 +11,13 @@ const ComponentName = ({ data }) => {
 
 export const query = graphql`
   {
-    allContentfulStatistics(sort: { fields: lectureNumber, order: DESC }) {
+    allContentfulStatistics(sort: { fields: createdAt, order: DESC }) {
       nodes {
         id
         lectureNumber
         url
         date(formatString: "dddd/MM/yyyy")
-        updatedAt(formatString: "dddd/MM/yyyy")
+        createdAt(formatString: "dddd/MM/yyyy")
         desc {
           desc
         }
