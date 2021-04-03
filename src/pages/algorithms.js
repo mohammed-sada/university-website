@@ -6,7 +6,7 @@ const ComponentName = ({ data }) => {
   const {
     allContentfulAlgorithims: { nodes: lectures },
   } = data
-  return <Subject lectures={lectures} name="algorithims" />
+  return <Subject lectures={lectures} name="algorithms" />
 }
 
 export const query = graphql`

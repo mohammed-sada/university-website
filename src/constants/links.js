@@ -3,8 +3,8 @@ import { Link } from "gatsby"
 const data = [
   {
     id: 2,
-    text: "algorithims",
-    url: "/algorithims/",
+    text: "algorithms",
+    url: "/algorithms/",
   },
   {
     id: 3,
