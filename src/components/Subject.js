@@ -11,7 +11,7 @@ const Subject = ({ lectures, name }) => {
       <div className="underline"></div>
       <div className="section-center blogs-center">
         {lectures.map(lecture => {
-          const { id, lectureNumber, url, desc, date, createdAt } = lecture
+          const { id, lectureNumber, url, desc, createdAt } = lecture
 
           return (
             <div key={id} className="blog">
@@ -20,23 +20,16 @@ const Subject = ({ lectures, name }) => {
                   <h4>{lectureNumber}:رقم المحاضرة</h4>
                   <p className="desc">{(desc !== null && desc.desc) || ""}</p>
                   <div className="blog-footer">
-                    <p
-                      className={`${
-                        createdAt !==
-                          dayjs(new Date()).format("dddd/MM/YYYY") && "hideNew"
-                      }`}
-                    >
-                      new
-                    </p>
                     <a
                       href={url}
                       target="_blank"
                       rel="noreferrer"
                       className="btn"
                     >
-                      رابط المحاضرة
+                      {lectureNumber == 0 ? "رابط اللقاء" : "رابط المحاضرة"}
                     </a>
-                    <p>{date || createdAt}</p>
+                    <p>{createdAt}</p>
+                    {lectureNumber == 0 && <h3>Teams لقاء</h3>}
                   </div>
                 </div>
               </article>
